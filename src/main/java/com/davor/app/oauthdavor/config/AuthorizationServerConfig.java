@@ -37,7 +37,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret("secret2")
                 .scopes("read")
                 .authorizedGrantTypes("authorization_code")
-                .redirectUris("http://localhost:9090");
+                .redirectUris("http://localhost:9090")
+                .and()
+                .withClient("client3")
+                .secret("secret3")
+                .scopes("read")
+                .authorizedGrantTypes("client_credentials");
 
         // grant_type: Es el flujo del preciso flujo en el cual el cliente obtiene el token: authorization_code (pkce),
         // refresh_token, password (almost deprecated), client_credentials, implicit (deprecated)
